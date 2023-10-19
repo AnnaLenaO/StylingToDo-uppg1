@@ -184,10 +184,12 @@ li span {
 
 li span:hover {
     text-decoration: line-through;
+    text-decoration-thickness: 1.65px;
     cursor: pointer;
 }
 
 .markComplete span:first-of-type {
     text-decoration: line-through;
-    color: rgb(117, 116, 116);
+    text-decoration-thickness: 1.65px;
+    color: rgb(111, 111, 111);
 }
