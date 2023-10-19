@@ -1,0 +1,193 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: rgb(231, 132, 132);
+    background-image: linear-gradient(rgb(255, 198, 206), rgb(238, 125, 125));
+    background-repeat: no-repeat;
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+}
+
+@keyframes containerMove {
+    0% {
+        margin: -200px auto auto;
+    }
+
+    50% {
+        margin: 80px auto auto;
+    }
+
+    100% {
+        margin: 0px auto auto;
+    }
+}
+
+@keyframes fadeInContainer {
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    background-color: white;
+    padding-top: 13px;
+    padding-left: 95px;
+    padding-right: 95px;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 0.25px 0.25px 8px 0.25px rgb(168, 110, 110);
+    animation: containerMove 0.7s, fadeInContainer ease 0.6s;
+    animation-timing-function: cubic-bezier(0.57, 0.4, 0.55, 1);
+}
+
+@keyframes fadeInElements {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.styleMyToDo {
+    color: black;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    animation: fadeInElements 1.25s;
+}
+
+#allComplete {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin-bottom: 25px;
+    animation: fadeInElements 1.35s;
+}
+
+input {
+    width: 180px;
+    font-size: 18px;
+    letter-spacing: -0.5px;
+    animation: fadeInElements 1.55s;
+}
+
+input[type=text]:focus {
+    outline: none;
+    border: 1.5px solid rgb(21, 67, 183);
+    border-radius: 3px;
+}
+
+#saveBtn {
+    color: black;
+    font-size: 18px;
+    margin-left: 2px;
+    animation: fadeInElements 1.55s;
+}
+
+#userMessage {
+    color: rgb(174, 18, 18);
+    font-style: italic;
+    margin-top: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12.5px;
+    display: block;
+}
+
+@keyframes blinkingThreeTimes {
+    50% {
+        color: transparent;
+    }
+}
+
+.userMessageBlinking {
+    animation: blinkingThreeTimes 0.6s linear 2;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    margin: 17px 0 27px 0;
+}
+
+@keyframes listItemsMove {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInList {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+ul li {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    animation: listItemsMove 0.45s, fadeInList 0.45s;
+    cursor: pointer;
+}
+
+.deletetoDo {
+    color: grey;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.deletetoDo:hover {
+    text-decoration: none;
+    color: black;
+}
+
+/*Completed ToDO fade till gray*/
+
+li span {
+    align-self: stretch;
+    margin-top: 0;
+    transition-property: color;
+    transition-duration: 0.2s;
+    transition-delay: 0.05s;
+}
+
+li span:hover {
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+.markComplete span:first-of-type {
+    text-decoration: line-through;
+    color: rgb(117, 116, 116);
+}
